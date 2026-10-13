@@ -1,0 +1,30 @@
+
+##### filter = >=4 distinct categories only (no like filter)  (outfits=2,475,806)
+year | outfits | users | outfits/user mean | top-10 users share | top-1% users share
+2013 | 443,769 | 51,582 | 8.6 | 1.8% | 17.8%
+2014 | 716,946 | 79,841 | 9.0 | 2.1% | 24.2%
+2015 | 606,619 | 49,053 | 12.4 | 2.6% | 31.3%
+2016 | 292,491 | 18,708 | 15.6 | 6.3% | 31.8%
+2017 | 135,346 | 7,450 | 18.2 | 12.3% | 35.1%
+
+pair | users active in both | overall TV (all outfits) | within-user TV (same users, equal weights) | same-year split-half noise floor (same users)
+2013->2014 | 8,782 | 0.131 | 0.106 | 0.021
+2013->2015 | 1,861 | 0.175 | 0.126 | 0.036
+2013->2016 | 715 | 0.181 | 0.151 | 0.041
+2013->2017 | 341 | 0.225 | 0.205 | 0.062
+2015->2016 | 6,434 | 0.046 | 0.072 | 0.018
+
+##### filter = official eligible (>=4 categories AND like_num>=50)  (outfits=442,907)
+year | outfits | users | outfits/user mean | top-10 users share | top-1% users share
+2013 | 42,531 | 6,418 | 6.6 | 9.3% | 32.1%
+2014 | 98,296 | 7,078 | 13.9 | 8.1% | 31.0%
+2015 | 153,617 | 4,515 | 34.0 | 9.1% | 25.7%
+2016 | 81,302 | 1,332 | 61.0 | 18.3% | 21.0%
+2017 | 38,518 | 543 | 70.9 | 32.4% | 22.6%
+
+pair | users active in both | overall TV (all outfits) | within-user TV (same users, equal weights) | same-year split-half noise floor (same users)
+2013->2014 | 611 | 0.195 | 0.140 | 0.064
+2013->2015 | 193 | 0.221 | 0.174 | 0.116
+2013->2016 | 57 | 0.250 | 0.159 | 0.124
+2013->2017 | 42 | 0.290 | 0.333 | 0.121
+2015->2016 | 674 | 0.096 | 0.070 | 0.033

@@ -1,0 +1,56 @@
+== grid on val_id NLL only (seed 0) ==
+hidden 64 dropout 0.1 lr 0.0001 wd 0.01: val_id acc 51.1 NLL 1.1106 best_epoch 13 params 262,272
+hidden 64 dropout 0.1 lr 0.0001 wd 0.1: val_id acc 51.2 NLL 1.1101 best_epoch 13 params 262,272
+hidden 64 dropout 0.1 lr 0.0003 wd 0.01: val_id acc 47.0 NLL 1.2251 best_epoch 10 params 262,272
+hidden 64 dropout 0.1 lr 0.0003 wd 0.1: val_id acc 47.2 NLL 1.2222 best_epoch 10 params 262,272
+hidden 64 dropout 0.1 lr 0.001 wd 0.01: val_id acc 38.0 NLL 2.1760 best_epoch 1 params 262,272
+hidden 64 dropout 0.1 lr 0.001 wd 0.1: val_id acc 38.1 NLL 2.1625 best_epoch 1 params 262,272
+hidden 64 dropout 0.3 lr 0.0001 wd 0.01: val_id acc 50.8 NLL 1.1107 best_epoch 15 params 262,272
+hidden 64 dropout 0.3 lr 0.0001 wd 0.1: val_id acc 50.8 NLL 1.1104 best_epoch 15 params 262,272
+hidden 64 dropout 0.3 lr 0.0003 wd 0.01: val_id acc 47.2 NLL 1.2034 best_epoch 10 params 262,272
+hidden 64 dropout 0.3 lr 0.0003 wd 0.1: val_id acc 47.2 NLL 1.2013 best_epoch 10 params 262,272
+hidden 64 dropout 0.3 lr 0.001 wd 0.01: val_id acc 39.7 NLL 2.2013 best_epoch 1 params 262,272
+hidden 64 dropout 0.3 lr 0.001 wd 0.1: val_id acc 39.7 NLL 2.1832 best_epoch 1 params 262,272
+hidden 256 dropout 0.1 lr 0.0001 wd 0.01: val_id acc 49.5 NLL 1.2325 best_epoch 10 params 1,049,088
+hidden 256 dropout 0.1 lr 0.0001 wd 0.1: val_id acc 49.5 NLL 1.2294 best_epoch 10 params 1,049,088
+hidden 256 dropout 0.1 lr 0.0003 wd 0.01: val_id acc 43.4 NLL 1.7629 best_epoch 3 params 1,049,088
+hidden 256 dropout 0.1 lr 0.0003 wd 0.1: val_id acc 43.4 NLL 1.7528 best_epoch 3 params 1,049,088
+hidden 256 dropout 0.1 lr 0.001 wd 0.01: val_id acc 38.8 NLL 7.0182 best_epoch 1 params 1,049,088
+hidden 256 dropout 0.1 lr 0.001 wd 0.1: val_id acc 39.0 NLL 6.8402 best_epoch 1 params 1,049,088
+hidden 256 dropout 0.3 lr 0.0001 wd 0.01: val_id acc 49.1 NLL 1.2144 best_epoch 30 params 1,049,088
+hidden 256 dropout 0.3 lr 0.0001 wd 0.1: val_id acc 49.0 NLL 1.2066 best_epoch 30 params 1,049,088
+hidden 256 dropout 0.3 lr 0.0003 wd 0.01: val_id acc 42.4 NLL 1.9764 best_epoch 1 params 1,049,088
+hidden 256 dropout 0.3 lr 0.0003 wd 0.1: val_id acc 43.5 NLL 1.9641 best_epoch 2 params 1,049,088
+hidden 256 dropout 0.3 lr 0.001 wd 0.01: val_id acc 37.8 NLL 8.0275 best_epoch 1 params 1,049,088
+hidden 256 dropout 0.3 lr 0.001 wd 0.1: val_id acc 38.3 NLL 7.8844 best_epoch 1 params 1,049,088
+selected: {'variant': 'linear', 'hidden': 64, 'dropout': 0.1, 'lr': 0.0001, 'wd': 0.1, 'bs': 256}
+seed 0: best_epoch 13 params 262,272 train 7.4s | val_id 51.2 test_id 52.7 test_ud 50.9 test_2014 41.8 test_2015 40.5 test_2017 40.1
+seed 1: best_epoch 20 params 262,272 train 10.4s | val_id 51.6 test_id 54.4 test_ud 51.9 test_2014 43.1 test_2015 41.9 test_2017 40.3
+seed 2: best_epoch 24 params 262,272 train 11.5s | val_id 51.2 test_id 53.2 test_ud 51.5 test_2014 44.4 test_2015 41.0 test_2017 38.9
+seed 3: best_epoch 24 params 262,272 train 11.8s | val_id 51.6 test_id 53.2 test_ud 50.9 test_2014 42.1 test_2015 40.3 test_2017 39.6
+seed 4: best_epoch 26 params 262,272 train 12.2s | val_id 52.1 test_id 54.4 test_ud 52.4 test_2014 43.5 test_2015 39.9 test_2017 40.0
+
+== accuracy (%, mean of 5 seeds; user-cluster 95% CI; chance 25) ==
+set           cosine (training-free)        linear (5 seeds)           MLP (5 seeds)
+val_id            33.0 [31.7,34.5]        51.6 [50.1,52.9]        59.6 [58.3,60.9]
+test_id           34.3 [32.6,35.9]        53.6 [52.1,55.1]        61.9 [60.5,63.4]
+test_ud           32.4 [30.8,34.0]        51.5 [49.2,53.7]        58.8 [56.8,60.8]
+test_2014         29.3 [28.3,30.4]        43.0 [42.1,43.9]        50.1 [49.2,51.1]
+test_2015         28.6 [27.5,29.6]        40.7 [39.8,41.6]        46.2 [45.2,47.2]
+test_2017         28.5 [27.2,29.7]        39.8 [38.4,41.1]        45.1 [43.7,46.5]
+per-seed linear acc range per set: val_id 51.2-52.1; test_id 52.7-54.4; test_ud 50.9-52.4; test_2014 41.8-44.4; test_2015 39.9-41.9; test_2017 38.9-40.3
+
+== DESCRIPTIVE baseline-relative degradation: accuracy change (shifted year - reference), percentage points [independent user-cluster 95% CI] ==
+(descriptive only: not additive, not a causal decomposition, not a measure of task difficulty; the three models differ in capacity and in what they exploit)
+-- reference test_id
+year                        cosine                  linear                     MLP      MLP drop - linear drop
+test_2014         -5.0 [-7.0,-2.9]      -10.6 [-12.4,-8.9]     -11.8 [-13.6,-10.2]        -1.2 [-2.6,+0.2]
+test_2015         -5.7 [-7.6,-3.7]     -12.9 [-14.6,-11.2]     -15.8 [-17.6,-14.0]        -2.9 [-4.3,-1.5]
+test_2017         -5.8 [-7.9,-3.8]     -13.8 [-15.9,-11.9]     -16.9 [-18.8,-14.8]        -3.1 [-4.6,-1.5]
+-- reference test_ud
+year                        cosine                  linear                     MLP      MLP drop - linear drop
+test_2014         -3.1 [-5.1,-1.1]       -8.5 [-10.8,-6.0]       -8.7 [-10.9,-6.5]        -0.1 [-1.7,+1.4]
+test_2015         -3.9 [-5.7,-2.0]      -10.8 [-13.1,-8.2]     -12.6 [-14.9,-10.4]        -1.8 [-3.3,-0.3]
+test_2017         -3.9 [-5.9,-1.9]      -11.7 [-14.2,-9.1]     -13.7 [-16.1,-11.2]        -2.0 [-3.6,-0.4]
+
+parameters: cosine 0 (training-free) | linear 262,272 | MLP 1,245,953

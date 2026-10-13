@@ -1,0 +1,6 @@
+set,n_instances,n_users,effective_users_kish,acc_5seed_mean_pct,ece_5seed_mean_arraysplit,conf_minus_acc_pp
+test_id,3172,1277,344,61.93,0.0302,0.71
+test_ud,3851,593,53,58.76,0.0355,2.99
+test_2014,7702,1937,453,50.10,0.0561,5.54
+test_2015,7702,1361,352,46.15,0.0759,7.57
+test_2017,7702,373,53,45.06,0.0871,8.63

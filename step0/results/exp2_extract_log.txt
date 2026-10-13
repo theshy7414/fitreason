@@ -1,0 +1,20 @@
+seed 0: bank (30816, 256); logits match stored preds; mean knn10 per set: val_id=0.735 test_id=0.733 test_ud=0.732 test_2014=0.747 test_2015=0.762 test_2017=0.777
+seed 1: bank (30816, 256); logits match stored preds; mean knn10 per set: val_id=0.691 test_id=0.688 test_ud=0.686 test_2014=0.705 test_2015=0.717 test_2017=0.721
+seed 2: bank (30816, 256); logits match stored preds; mean knn10 per set: val_id=0.720 test_id=0.717 test_ud=0.719 test_2014=0.724 test_2015=0.735 test_2017=0.739
+seed 3: bank (30816, 256); logits match stored preds; mean knn10 per set: val_id=0.713 test_id=0.712 test_ud=0.714 test_2014=0.728 test_2015=0.742 test_2017=0.752
+seed 4: bank (30816, 256); logits match stored preds; mean knn10 per set: val_id=0.704 test_id=0.702 test_ud=0.702 test_2014=0.723 test_2015=0.737 test_2017=0.751
+{
+ "n_instances": 7702,
+ "single_forward_s": 0.04271,
+ "ensemble5_forward_s": 0.21751,
+ "single_forward_with_hidden_s": 0.0384,
+ "knn_search_s": 0.02187,
+ "knn_total_s": 0.06027,
+ "bank_build_s": 0.18347,
+ "bank_bytes": 31555584,
+ "knn_peak_gpu_MB_incl_data": 3641.64506,
+ "params_single": 1245953,
+ "params_ensemble": 6229765,
+ "train_seconds_single": 20.8,
+ "train_seconds_ensemble": 90.8
+}

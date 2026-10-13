@@ -1,0 +1,37 @@
+======== exact visual twins (different item_id, centred cosine >= 0.999), sample of 3000 train items per category ========
+twins: 1978/21000 (9.4%) of sampled train items | same category_id2: 94.0% | same price (>0): 90.4%
+=> twins are (nearly) the same product image re-listed under another item_id; 'seen' by item_id under-counts visual familiarity.
+
+======== setting B (between users), variant U (unseen item_id) ========
+eval set   pooled AUROC (equal-weight over categories) [user-cluster 95% CI]   per-category AUROC (n_dom1)
+test_id      0.526 [0.515,0.536]  users=4857   10:0.48(255)  11:0.57(959)  12:0.52(391)  13:0.54(995)  14:0.53(842)  15:0.52(1095)  16:0.52(329)
+test_ud      0.528 [0.517,0.540]  users=5103   10:0.50(209)  11:0.54(616)  12:0.55(346)  13:0.54(739)  14:0.50(617)  15:0.54(750)  16:0.52(308)
+test_2014    0.687 [0.681,0.694]  users=6319   10:0.68(1774)  11:0.70(4704)  12:0.73(3305)  13:0.71(4542)  14:0.66(4392)  15:0.63(5574)  16:0.69(1414)
+test_2015    0.774 [0.769,0.779]  users=5941   10:0.77(2055)  11:0.78(4797)  12:0.83(3677)  13:0.79(4377)  14:0.73(4296)  15:0.70(5059)  16:0.82(1737)
+test_2017    0.840 [0.834,0.845]  users=4985   10:0.82(1328)  11:0.82(1943)  12:0.90(1709)  13:0.87(1772)  14:0.79(1818)  15:0.80(2002)  16:0.88(1071)
+
+======== setting B (between users), variant N (unseen id AND centred-cos<0.98 to every train item) ========
+eval set   pooled AUROC (equal-weight over categories) [user-cluster 95% CI]   per-category AUROC (n_dom1)
+test_id      0.534 [0.524,0.545]  users=4846   10:0.46(226)  11:0.56(880)  12:0.54(337)  13:0.56(955)  14:0.55(804)  15:0.54(1024)  16:0.53(314)
+test_ud      0.526 [0.514,0.537]  users=5088   10:0.52(192)  11:0.54(574)  12:0.51(316)  13:0.52(714)  14:0.53(588)  15:0.53(716)  16:0.53(303)
+test_2014    0.686 [0.680,0.694]  users=6320   10:0.67(1696)  11:0.71(4584)  12:0.73(3182)  13:0.71(4472)  14:0.66(4337)  15:0.63(5478)  16:0.68(1397)
+test_2015    0.775 [0.770,0.780]  users=5943   10:0.77(2039)  11:0.78(4772)  12:0.82(3642)  13:0.79(4355)  14:0.73(4287)  15:0.71(5027)  16:0.83(1733)
+test_2017    0.838 [0.833,0.843]  users=4987   10:0.82(1328)  11:0.82(1942)  12:0.90(1707)  13:0.86(1771)  14:0.79(1818)  15:0.80(1999)  16:0.87(1071)
+
+======== setting W (WITHIN users present in both domains), variant U (unseen item_id) ========
+eval set   pooled AUROC (equal-weight over categories) [user-cluster 95% CI]   per-category AUROC (n_dom1)
+test_id      0.513 [0.500,0.526]  users=693    10:0.49(215)  11:0.53(868)  12:0.51(341)  13:0.51(856)  14:0.53(744)  15:0.52(952)  16:0.49(257)
+test_ud                                         - (too few items/categories)
+test_2014    0.602 [0.589,0.615]  users=237    10:0.56(282)  11:0.65(707)  12:0.62(500)  13:0.66(735)  14:0.57(740)  15:0.53(819)  16:0.62(194)
+test_2015    0.669 [0.645,0.691]  users=59     11:0.67(188)  13:0.78(193)  14:0.65(188)  15:0.58(210)
+test_2017                                       - (too few items/categories)
+
+======== setting W (WITHIN users present in both domains), variant N (unseen id AND centred-cos<0.98 to every train item) ========
+eval set   pooled AUROC (equal-weight over categories) [user-cluster 95% CI]   per-category AUROC (n_dom1)
+test_id      0.528 [0.516,0.539]  users=677    10:0.48(189)  11:0.52(800)  12:0.56(298)  13:0.54(822)  14:0.54(713)  15:0.53(895)  16:0.52(245)
+test_ud                                         - (too few items/categories)
+test_2014    0.602 [0.585,0.617]  users=236    10:0.57(254)  11:0.61(683)  12:0.60(484)  13:0.68(721)  14:0.58(725)  15:0.54(806)  16:0.63(191)
+test_2015    0.663 [0.641,0.683]  users=59     11:0.68(187)  13:0.75(193)  14:0.63(188)  15:0.60(209)
+test_2017                                       - (too few items/categories)
+
+(0.5 = indistinguishable from the 2013 train domain. test_id/test_ud are same-year controls: they show the floor produced by the procedure itself.)

@@ -1,0 +1,23 @@
+{
+ "n_instances": 7702,
+ "single_forward_s": 0.0427107572555542,
+ "ensemble5_forward_s": 0.21751413345336915,
+ "single_forward_with_hidden_s": 0.03839964866638183,
+ "knn_search_s": 0.02187376022338867,
+ "knn_total_s": 0.06027340888977051,
+ "bank_build_s": 0.18347299098968506,
+ "bank_bytes": 31555584,
+ "knn_peak_gpu_MB_incl_data": 3641.645056,
+ "params_single": 1245953,
+ "params_ensemble": 6229765,
+ "train_seconds_single": 20.8,
+ "train_seconds_ensemble": 90.8,
+ "env": {
+  "python": "3.10.12",
+  "torch": "2.8.0+cu128",
+  "cuda": "12.8",
+  "gpu": "NVIDIA GeForce RTX 3070 Ti",
+  "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+  "manifest_sha256": "8f39f68655be40dbac5707262907b3ae313a8eb3162309ff10ca2335ce9588f0"
+ }
+}

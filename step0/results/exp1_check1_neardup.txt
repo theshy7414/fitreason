@@ -1,0 +1,59 @@
+
+======== S1 train-2013 (Task B): item-level near-duplicates vs train items ========
+[S1] reference train->other-train top-1 sim percentiles(5,25,50,75,95,99): 0.628 0.748 0.825 0.891 1.000 1.000  | share>=0.9:21.8% 0.95:12.1% 0.98:10.7% 0.999:9.6%
+role       uniq items seen-id%           NN pct(5..99) of UNSEEN items    >=0.9   >=0.95   >=0.98  >=0.999
+val_id          17639     63.6     0.610 0.731 0.809 0.875 1.000 1.000   17.52%    8.90%    7.83%    6.80%
+test_id         14876     65.5     0.613 0.732 0.805 0.871 1.000 1.000   16.29%    8.55%    7.29%    6.41%
+test_ud         16631     64.8     0.620 0.737 0.811 0.875 1.000 1.000   17.66%    9.35%    7.98%    7.06%
+test_2014       37972     11.7     0.618 0.730 0.803 0.862 0.934 1.000   11.57%    3.76%    2.88%    2.42%
+test_2015       38131      1.2     0.601 0.717 0.792 0.853 0.916 0.959    8.56%    1.31%    0.80%    0.58%
+test_2017       38707      0.1     0.574 0.694 0.772 0.839 0.905 0.938    6.04%    0.42%    0.09%    0.06%
+   (rates are among items whose item_id is NOT in train; identical-id reuse is the 'seen' column)
+
+Per-category reference vs shifted-year NN (median top-1 sim of UNSEEN items; lower = more visually novel):
+cat1   train-ref    val_id   test_id   test_ud test_2014 test_2015 test_2017
+10         0.839     0.833     0.822     0.841     0.838     0.831     0.806
+11         0.820     0.812     0.812     0.827     0.818     0.808     0.785
+12         0.876     0.864     0.851     0.863     0.854     0.844     0.821
+13         0.788     0.785     0.787     0.789     0.771     0.749     0.726
+14         0.762     0.758     0.753     0.763     0.735     0.716     0.689
+15         0.831     0.828     0.830     0.819     0.818     0.804     0.796
+16         0.849     0.841     0.833     0.838     0.850     0.861     0.849
+
+======== S1: outfit-level leakage ========
+
+[S1] OUTFIT-LEVEL: share of eval outfits whose items are matched to ONE train outfit
+role           n   id>=.5  id>=.8  nd0.95>=.5   >=.8  nd0.98>=.5   >=.8 nd0.999>=.5   >=.8
+val_id      3851    1.82%   0.03%       0.03%  0.00%       0.03%  0.00%       0.03%  0.00%
+test_id     3172    2.33%   0.03%       0.00%  0.00%       0.00%  0.00%       0.00%  0.00%
+test_ud     3851    2.08%   0.00%       0.03%  0.00%       0.03%  0.00%       0.03%  0.00%
+test_2014   7702    0.09%   0.00%       0.00%  0.00%       0.00%  0.00%       0.00%  0.00%
+test_2015   7702    0.01%   0.00%       0.00%  0.00%       0.00%  0.00%       0.00%  0.00%
+test_2017   7702    0.00%   0.00%       0.00%  0.00%       0.00%  0.00%       0.00%  0.00%
+
+======== S1: instance-level (Task B frozen instances) ========
+role           n | P(pos has near-dup in train) vs P(neg has) at tau=.95 | neg~pos dup .95/.98 | cand~query-item dup .95/.98 | outfit-leak(.95,>=.5)
+val_id      3851 |  14.9% vs  14.6% |  0.03% /  0.03% |  0.00% /  0.00% |  0.03%
+test_id     3172 |  15.8% vs  15.1% |  0.00% /  0.00% |  0.00% /  0.00% |  0.00%
+test_ud     3851 |  15.8% vs  15.3% |  0.00% /  0.00% |  0.03% /  0.00% |  0.03%
+test_2014   7702 |   5.7% vs   5.7% |  0.03% /  0.03% |  0.05% /  0.00% |  0.00%
+test_2015   7702 |   1.6% vs   1.5% |  0.01% /  0.01% |  0.00% /  0.00% |  0.00%
+test_2017   7702 |   0.4% vs   0.4% |  0.01% /  0.01% |  0.01% /  0.00% |  0.00%
+
+======== S0 official-procedure split (Task A): near-duplicates vs S0 train items ========
+[S0] reference train->other-train top-1 sim percentiles(5,25,50,75,95,99): 0.626 0.748 0.825 0.891 1.000 1.000  | share>=0.9:22.1% 0.95:11.9% 0.98:10.5% 0.999:9.4%
+role       uniq items seen-id%           NN pct(5..99) of UNSEEN items    >=0.9   >=0.95   >=0.98  >=0.999
+test_2013       24863     62.1     0.608 0.728 0.805 0.872 1.000 1.000   15.94%    8.54%    7.44%    6.54%
+test_2014       20491     12.0     0.617 0.732 0.803 0.863 0.936 1.000   11.79%    3.76%    2.88%    2.42%
+test_2015       20890      1.2     0.600 0.717 0.792 0.854 0.916 0.958    8.53%    1.26%    0.79%    0.59%
+test_2017       21268      0.1     0.577 0.695 0.773 0.839 0.906 0.938    6.07%    0.41%    0.09%    0.05%
+   (rates are among items whose item_id is NOT in train; identical-id reuse is the 'seen' column)
+
+[S0] OUTFIT-LEVEL: share of eval outfits whose items are matched to ONE train outfit
+role           n   id>=.5  id>=.8  nd0.95>=.5   >=.8  nd0.98>=.5   >=.8 nd0.999>=.5   >=.8
+test_2013   5858    2.05%   0.07%       0.02%  0.00%       0.02%  0.00%       0.02%  0.00%
+test_2014   3851    0.10%   0.00%       0.00%  0.00%       0.00%  0.00%       0.00%  0.00%
+test_2015   3851    0.03%   0.00%       0.00%  0.00%       0.00%  0.00%       0.00%  0.00%
+test_2017   3851    0.00%   0.00%       0.00%  0.00%       0.00%  0.00%       0.00%  0.00%
+
+flags saved: results/exp1_neardup_flags_taskB.json, results/exp1_neardup_flags_taskA_outfits.json (manifests untouched)

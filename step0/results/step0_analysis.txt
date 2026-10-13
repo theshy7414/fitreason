@@ -1,0 +1,94 @@
+
+======== 1. BASIC ========
+outfits=2,555,147 item_slots=15,218,721 unique_items=2,335,598 unique_users=193,574
+publish_date range: 20100303 20200406
+n_items per outfit: min/median/mean/max = 4 6 5.96 25
+category_id1 values: [10, 11, 12, 13, 14, 15, 16]
+price<=0 slots: 40576
+like_num: min/median/mean/max = 0 9 27.0 5002
+outfits per publish year:
+ 2010      1423
+2011      4813
+2012    131611
+2013    466583
+2014    730443
+2015    617844
+2016    299502
+2017    137510
+2018     92944
+2019     59412
+2020     13062
+
+======== 2. DUPLICATES ========
+duplicate set_id rows: 0
+outfits whose exact item set also appears in another outfit: 17,952 (0.70%)
+duplicated item-sets: 8,342; spanning >1 year: 70; by >1 distinct user: 227
+
+======== 3. OFFICIAL FILTER (>=4 distinct category_id1 AND like_num>=50) PER YEAR ========
+ year    all  >=4cats  like>=50  eligible
+ 2010   1423     1035         0         0
+ 2011   4813     4394         3         2
+ 2012 131611   115262      8618      7694
+ 2013 466583   443769     44612     42531
+ 2014 730443   716946     99380     98296
+ 2015 617844   606619    155316    153617
+ 2016 299502   292491     82117     81302
+ 2017 137510   135346     38709     38518
+ 2018  92944    91257     14802     14744
+ 2019  59412    56453      5943      5923
+ 2020  13062    12234       283       280
+official sizes needed: train=30,816 (from train year), val+test=3,851+3,851 = 7,702 (from test year)
+
+======== 4. PER-YEAR COMPOSITION OF ELIGIBLE OUTFITS (2013-2017) ========
+2013: outfits=42,531 users=6,418 outfits/user mean=6.63 median=1 top1%users_share=32.1% top10users_share=9.3% items/outfit=5.76 like_med=81 price_med=7980
+2014: outfits=98,296 users=7,078 outfits/user mean=13.89 median=2 top1%users_share=31.0% top10users_share=8.1% items/outfit=6.01 like_med=80 price_med=10260
+2015: outfits=153,617 users=4,515 outfits/user mean=34.02 median=2 top1%users_share=25.7% top10users_share=9.1% items/outfit=6.20 like_med=92 price_med=11000
+2016: outfits=81,302 users=1,332 outfits/user mean=61.04 median=5 top1%users_share=21.0% top10users_share=18.3% items/outfit=6.53 like_med=85 price_med=10584
+2017: outfits=38,518 users=543 outfits/user mean=70.94 median=7 top1%users_share=22.6% top10users_share=32.4% items/outfit=6.40 like_med=67 price_med=12420
+
+category_id1 share of item slots, per year (cols=category):
+         10     11     12     13     14     15     16
+2013  0.055  0.204  0.148  0.177  0.152  0.209  0.054
+2014  0.061  0.194  0.146  0.166  0.158  0.237  0.038
+2015  0.067  0.192  0.143  0.161  0.156  0.233  0.047
+2016  0.072  0.189  0.138  0.153  0.152  0.239  0.056
+2017  0.079  0.185  0.146  0.156  0.155  0.226  0.052
+
+Total-variation distance between years, item-level category mix  (0=same, 1=disjoint):
+       2013   2014   2015   2016   2017
+2013  0.000  0.040  0.040  0.048  0.044
+2014  0.040  0.000  0.016  0.031  0.033
+2015  0.040  0.016  0.000  0.019  0.020
+2016  0.048  0.031  0.019  0.000  0.021
+2017  0.044  0.033  0.020  0.021  0.000
+
+TV distance, outfit-level category-PATTERN mix (which categories co-occur):
+       2013   2014   2015   2016   2017
+2013  0.000  0.195  0.221  0.250  0.290
+2014  0.195  0.000  0.093  0.181  0.198
+2015  0.221  0.093  0.000  0.096  0.120
+2016  0.250  0.181  0.096  0.000  0.074
+2017  0.290  0.198  0.120  0.074  0.000
+
+======== 5. LEAKAGE ACROSS YEARS (train year 2013 -> test years), eligible pools ========
+item_catalog rows: 2335598 | catalog year range: 2010 2020
+catalog year == first outfit-appearance year for 100.0 % of the first 200k items
+train 2013 -> test 2013: test outfits by users who posted in 2013: 100.0% | test item slots already in 2013 eligible outfits: 100.0% | item first appeared <= 2013: 100.0% | test outfits with identical item-set seen in 2013 pool: nan%
+train 2013 -> test 2014: test outfits by users who posted in 2013: 28.8% | test item slots already in 2013 eligible outfits: 14.9% | item first appeared <= 2013: 23.2% | test outfits with identical item-set seen in 2013 pool: 0.00%
+train 2013 -> test 2015: test outfits by users who posted in 2013: 6.0% | test item slots already in 2013 eligible outfits: 1.4% | item first appeared <= 2013: 2.3% | test outfits with identical item-set seen in 2013 pool: 0.00%
+train 2013 -> test 2016: test outfits by users who posted in 2013: 4.7% | test item slots already in 2013 eligible outfits: 0.3% | item first appeared <= 2013: 0.6% | test outfits with identical item-set seen in 2013 pool: 0.00%
+train 2013 -> test 2017: test outfits by users who posted in 2013: 7.1% | test item slots already in 2013 eligible outfits: 0.2% | item first appeared <= 2013: 0.4% | test outfits with identical item-set seen in 2013 pool: 0.00%
+
+======== 6. SHORTCUT BASELINES for the official set-FITB protocol (metadata only, simulated like shift15m code) ========
+test year 2014, n_cands=4: {'n': 3851, 'chance': 0.25, 'category_complement': np.float64(0.6414), 'size_only': np.float64(0.3448), 'size_plus_category': np.float64(0.7302), 'mean_cat_overlap_correct': 0.4186, 'mean_cat_overlap_negative': 1.317}
+test year 2014, n_cands=8: {'n': 3851, 'chance': 0.125, 'category_complement': np.float64(0.4483), 'size_only': np.float64(0.1852), 'size_plus_category': np.float64(0.5528), 'mean_cat_overlap_correct': 0.4186, 'mean_cat_overlap_negative': 1.3123}
+test year 2016, n_cands=4: {'n': 3851, 'chance': 0.25, 'category_complement': np.float64(0.6347), 'size_only': np.float64(0.3693), 'size_plus_category': np.float64(0.7478), 'mean_cat_overlap_correct': 0.5199, 'mean_cat_overlap_negative': 1.449}
+test year 2016, n_cands=8: {'n': 3851, 'chance': 0.125, 'category_complement': np.float64(0.4419), 'size_only': np.float64(0.2046), 'size_plus_category': np.float64(0.5778), 'mean_cat_overlap_correct': 0.5199, 'mean_cat_overlap_negative': 1.4279}
+
+======== 7. STORAGE ESTIMATES (unique items needed per experiment, official-size sampling, approximate) ========
+2013->2013: unique items=82,374 | fp16 4096-d = 0.67 GB | fp32 = 1.35 GB
+2013->2014: unique items=115,668 | fp16 4096-d = 0.95 GB | fp32 = 1.90 GB
+2013->2016: unique items=119,611 | fp16 4096-d = 0.98 GB | fp32 = 1.96 GB
+2013->2017: unique items=121,119 | fp16 4096-d = 0.99 GB | fp32 = 1.98 GB
+all 2,335,598 items: fp16 = 19.1 GB | fp32 = 38.3 GB
+done

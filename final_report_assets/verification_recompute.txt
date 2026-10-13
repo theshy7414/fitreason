@@ -1,0 +1,53 @@
+set n users effusers | acc0 accE acc5 | err0
+val_id     3851 1380 319 | 59.7 61.8 59.6
+test_id    3172 1277 344 | 62.3 65.1 61.9
+test_ud    3851 593 53 | 59.2 60.4 58.8
+test_2014  7702 1937 453 | 50.3 52.3 50.1
+test_2015  7702 1361 352 | 45.7 48.3 46.2
+test_2017  7702 373 53 | 44.7 46.6 45.1
+
+AUROC (S-family, seed0 errors)
+test_id msp 0.7 knn 0.573 ens_msp 0.723 ens_mi 0.61
+test_ud msp 0.705 knn 0.58 ens_msp 0.732 ens_mi 0.623
+test_2014 msp 0.652 knn 0.545 ens_msp 0.675 ens_mi 0.571
+test_2015 msp 0.643 knn 0.552 ens_msp 0.664 ens_mi 0.558
+test_2017 msp 0.629 knn 0.53 ens_msp 0.652 ens_mi 0.567
+
+AUROC (E-family)
+test_id ens_msp 0.71 ens_mi 0.59 msp0 0.677
+test_ud ens_msp 0.736 ens_mi 0.61 msp0 0.697
+test_2014 ens_msp 0.67 ens_mi 0.556 msp0 0.635
+test_2015 ens_msp 0.651 ens_mi 0.541 msp0 0.617
+test_2017 ens_msp 0.649 ens_mi 0.547 msp0 0.614
+
+mean5 MSP AUROC, ECE(array_split), NLL, conf-acc
+val_id AUROC 0.7 ECE 0.032 NLL 0.943 conf-acc 2.4
+test_id AUROC 0.703 ECE 0.03 NLL 0.904 conf-acc 0.7
+test_ud AUROC 0.711 ECE 0.036 NLL 0.961 conf-acc 3.0
+test_2014 AUROC 0.654 ECE 0.056 NLL 1.135 conf-acc 5.5
+test_2015 AUROC 0.639 ECE 0.076 NLL 1.213 conf-acc 7.6
+test_2017 AUROC 0.633 ECE 0.087 NLL 1.24 conf-acc 8.6
+
+fixed val_id threshold (msp seed0): coverage / risk accepted
+val_id 80.0 35.2
+test_id 80.2 32.1
+test_ud 79.0 35.3
+test_2014 68.3 43.5
+test_2015 63.0 47.8
+test_2017 62.7 49.1
+
+risk@80 msp seed0 (own ranking)
+val_id 35.2 base 40.3
+test_id 32.1 base 37.7
+test_ud 35.7 base 40.8
+test_2014 45.9 base 49.7
+test_2015 50.8 base 54.3
+test_2017 52.1 base 55.3
+
+HCE seed-avg (msp, per-seed val_id tau) & coverage
+val_id 35.2 80.0
+test_id 33.0 81.0
+test_ud 35.7 78.8
+test_2014 43.8 68.7
+test_2015 47.6 64.3
+test_2017 49.1 65.1

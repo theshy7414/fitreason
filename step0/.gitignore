@@ -1,0 +1,7 @@
+# Step 0 experiment workspace: never commit data, features, downloaded packages or local deps
+data/
+pylibs/
+pkg/
+*.npz
+*.tar.gz
+*.json

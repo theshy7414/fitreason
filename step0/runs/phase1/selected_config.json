@@ -1,0 +1,74 @@
+{
+ "selected": {
+  "variant": "visual",
+  "hidden": 256,
+  "dropout": 0.3,
+  "lr": 0.0003,
+  "wd": 0.01,
+  "bs": 256
+ },
+ "grid_index": 3,
+ "seed": 0,
+ "grid_results": [
+  {
+   "cfg": {
+    "variant": "visual",
+    "hidden": 256,
+    "dropout": 0.3,
+    "lr": 0.0003,
+    "wd": 0.01,
+    "bs": 256
+   },
+   "val": {
+    "acc": 0.5972474681900805,
+    "nll": 0.9352537393569946
+   },
+   "best_epoch": 29
+  },
+  {
+   "cfg": {
+    "variant": "visual",
+    "hidden": 256,
+    "dropout": 0.1,
+    "lr": 0.0003,
+    "wd": 0.01,
+    "bs": 256
+   },
+   "val": {
+    "acc": 0.5855621916385354,
+    "nll": 0.9501211643218994
+   },
+   "best_epoch": 13
+  },
+  {
+   "cfg": {
+    "variant": "visual",
+    "hidden": 256,
+    "dropout": 0.1,
+    "lr": 0.001,
+    "wd": 0.01,
+    "bs": 256
+   },
+   "val": {
+    "acc": 0.5912749935081797,
+    "nll": 0.9594491124153137
+   },
+   "best_epoch": 30
+  },
+  {
+   "cfg": {
+    "variant": "visual",
+    "hidden": 256,
+    "dropout": 0.3,
+    "lr": 0.001,
+    "wd": 0.01,
+    "bs": 256
+   },
+   "val": {
+    "acc": 0.5715398597766814,
+    "nll": 0.9754168391227722
+   },
+   "best_epoch": 18
+  }
+ ]
+}

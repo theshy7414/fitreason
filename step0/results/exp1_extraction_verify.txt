@@ -1,0 +1,7 @@
+tars: 200 | all size+ETag verified: True | dir name matches tar: True
+files in tars: 2335598 | kept: 2335598 | bad_dim: 0 | nonfinite: 0 | fp16 overflow: 0
+matrix: (2335598, 4096) float16 | ids sorted & unique: True
+memmap rows match shard rows for 150 random items: OK
+feature scale (20k sample): mean=-5.047 std=9.452 max=84.8 min=-99.4 zero-rows=0
+catalog items: 2335598 | all have features: True
+required items: 391422 | covered: 391422

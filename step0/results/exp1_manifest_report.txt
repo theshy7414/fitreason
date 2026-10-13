@@ -1,0 +1,63 @@
+
+======== A. TASK B (project split S1): audit ========
+[tr2013] train outfits=30,816 users=5,137; eval roles disjoint from train/each other: OK
+[tr2013] exact item-set duplicates between train and any eval set: 0 (assert passed)
+[tr2013] train unique items=83,003
+[tr2013] test_ud users=593, overlap with train users = 0 (assert passed)
+
+role       n_inst  users eff.users top10u% user_seen% pos_seen% neg_seen% ctx_len(med)          pos@0..3 %
+val_id       3851   1380       319    10.9       91.0      70.8      70.2            5   25.8 24.0 26.3 24.0
+test_id      3172   1277       344    10.6       90.3      71.9      71.8            5   26.3 25.0 24.1 24.6
+test_ud      3851    593        53    35.7        0.0      72.8      71.9            5   24.4 24.5 25.9 25.2
+test_2014    7702   1937       453     7.8       21.6      12.7      13.8            5   24.9 25.0 25.2 25.0
+test_2015    7702   1361       352     9.3        4.9       1.3       1.1            5   25.5 23.9 25.1 25.5
+test_2017    7702    373        53    33.6        5.7       0.4       0.2            5   26.3 24.2 24.2 25.3
+[tr2013] leakage assertions on every instance (masked item not in ctx; 4 distinct candidates; negatives not in query outfit; same cat1; query outfit not in train): passed
+[tr2014] train outfits=30,816 users=3,763; eval roles disjoint from train/each other: OK
+[tr2014] exact item-set duplicates between train and any eval set: 0 (assert passed)
+[tr2014] train unique items=113,292
+[tr2014] test_ud users=478, overlap with train users = 0 (assert passed)
+
+role       n_inst  users eff.users top10u% user_seen% pos_seen% neg_seen% ctx_len(med)          pos@0..3 %
+val_id       3851   1213       399     8.6       94.5      56.1      56.1            5   24.9 25.6 25.7 23.8
+test_id      3851   1292       376     9.2       94.1      55.6      55.7            5   25.0 25.1 25.0 24.9
+test_ud      3851    478        34    41.9        0.0      53.1      53.5            5   25.4 24.6 24.1 25.9
+test_2015    7702   1361       352     9.3       40.0      11.4      10.9            5   25.5 23.9 25.1 25.5
+test_2016    7702    684       131    18.0       20.3       1.0       1.2            5   25.9 24.8 24.5 24.9
+test_2017    7702    373        53    33.6       21.6       0.7       0.7            5   26.3 24.2 24.2 25.3
+[tr2014] leakage assertions on every instance (masked item not in ctx; 4 distinct candidates; negatives not in query outfit; same cat1; query outfit not in train): passed
+
+======== B. TASK B shortcut baselines (metadata only; train-year statistics; random tie-break; acc % [user-cluster 95% CI]; chance=25.0) ========
+role                 cat1-only          cat2 prior      price-near-ctx    train popularity
+val_id      25.0 [ 25.0, 25.0]  24.7 [ 23.5, 26.0]  27.7 [ 26.3, 29.2]  24.9 [ 23.4, 26.6]
+test_id     25.0 [ 25.0, 25.0]  25.6 [ 24.2, 26.8]  30.1 [ 28.5, 31.7]  24.7 [ 23.0, 26.6]
+test_ud     25.0 [ 25.0, 25.0]  24.4 [ 23.0, 25.5]  28.8 [ 26.9, 30.5]  24.7 [ 22.8, 26.9]
+test_2014   25.0 [ 25.0, 25.0]  25.0 [ 24.2, 25.8]  28.7 [ 27.7, 29.8]  24.2 [ 23.5, 24.9]
+test_2015   25.0 [ 25.0, 25.0]  24.3 [ 23.6, 25.2]  27.4 [ 26.4, 28.3]  25.1 [ 25.0, 25.4]
+test_2017   25.0 [ 25.0, 25.0]  25.0 [ 24.1, 25.9]  29.6 [ 27.9, 31.5]  25.1 [ 25.0, 25.3]
+(price baseline falls back to chance when any price is missing/<=0)
+
+======== C. TASK A (official procedure S0, seed 0): audit + shortcut baselines on the FROZEN instances ========
+year 2013: test outfits=5858 val=5857 | outfit-level overlap with train/val: 0 (assert) | exact item-set duplicates vs train (official does not dedupe): 0.03%
+year 2014: test outfits=3851 val=3851 | outfit-level overlap with train/val: 0 (assert) | exact item-set duplicates vs train (official does not dedupe): 0.00%
+year 2015: test outfits=3851 val=3851 | outfit-level overlap with train/val: 0 (assert) | exact item-set duplicates vs train (official does not dedupe): 0.00%
+year 2017: test outfits=3851 val=3851 | outfit-level overlap with train/val: 0 (assert) | exact item-set duplicates vs train (official does not dedupe): 0.00%
+
+year/n_cands    chance  label==idx0        cat-complement             size-only         size+category
+2013/4             25.0         24.5    59.9 [ 58.7, 61.0]    36.8 [ 36.2, 37.3]    70.4 [ 69.4, 71.3]
+2013/8             12.5         12.7    40.5 [ 39.4, 41.5]    20.1 [ 19.6, 20.6]    52.1 [ 51.1, 53.0]
+2014/4             25.0         24.5    64.4 [ 63.2, 65.6]    34.2 [ 33.7, 34.8]    72.9 [ 71.9, 73.9]
+2014/8             12.5         13.1    44.3 [ 43.2, 45.4]    18.1 [ 17.7, 18.5]    54.1 [ 53.1, 55.2]
+2015/4             25.0         26.0    63.5 [ 62.3, 64.8]    35.1 [ 34.4, 35.8]    73.0 [ 71.9, 74.1]
+2015/8             12.5         12.0    45.3 [ 43.9, 46.6]    18.8 [ 18.2, 19.4]    56.4 [ 55.2, 57.5]
+2017/4             25.0         26.1    66.4 [ 64.1, 68.6]    35.5 [ 34.5, 36.7]    75.6 [ 74.3, 77.0]
+2017/8             12.5         13.2    47.8 [ 45.5, 50.0]    19.4 [ 18.4, 20.4]    58.7 [ 57.4, 60.1]
+(official instances place the correct answer at index 0; frozen files here shuffle positions with a fixed seed and store the label. label==idx0 column should be ~1/n_cands.)
+
+======== D. REQUIRED ITEM SET ========
+required_S1_tr2013: 206,366
+required_S0: 207,294
+required_S1_tr2014: 246,555
+required_items_total: 391,422
+required_items_total fp16 = 3.21 GB, fp32 = 6.41 GB; all 2,335,598 catalog items fp16 = 19.1 GB
+duplicates dropped from project pools: {'exact_dup_dropped': 133, 'repeated_item_outfits_dropped': 0}

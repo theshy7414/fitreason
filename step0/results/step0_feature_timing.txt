@@ -1,0 +1,5 @@
+items needed for 2013->2014 experiment: 115668
+tar scanned+filtered in 1.9s | files in tar=11678 | needed items found in this tar=554 (0.48% of needed; expected ~0.50% if hash-partitioned over 200 tars)
+decode-all timing: 1.08 ms/file -> full 2.34M items single-thread ~ 0.70 h
+stacked sample: (554, 4096) float16 | fp16 finite: True | max abs: 81.9375
+fraction of fp16-overflow (>65504): 0.0

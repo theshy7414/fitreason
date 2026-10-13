@@ -1,0 +1,20 @@
+# Large / non-reproducible-in-git artefacts (live locally in step0/ and in the backup)
+step0/data/
+step0/pylibs/
+*.pt
+*.pth
+*.npy
+*.tar
+*.tar.*
+*.tgz
+*.pkl
+*.pickle
+__pycache__/
+*.pyc
+.env
+.env.*
+*.key
+*.pem
+
+# Files > 5 MB, excluded explicitly
+step0/results/exp1_neardup_flags_taskB.json

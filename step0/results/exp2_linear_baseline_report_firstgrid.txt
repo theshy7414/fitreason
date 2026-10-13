@@ -1,0 +1,38 @@
+== grid on val_id NLL only (seed 0) ==
+Consider using tensor.detach() first. (Triggered internally at /pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:835.)
+  tl += float(loss) * len(b); ta += float((lg.argmax(1) == y).float().sum())
+dropout 0.1 lr 0.0003: val_id acc 43.4 NLL 1.7629 best_epoch 3 params 1,049,088
+dropout 0.1 lr 0.001: val_id acc 38.8 NLL 7.0182 best_epoch 1 params 1,049,088
+dropout 0.3 lr 0.0003: val_id acc 42.4 NLL 1.9764 best_epoch 1 params 1,049,088
+dropout 0.3 lr 0.001: val_id acc 37.8 NLL 8.0275 best_epoch 1 params 1,049,088
+selected: {'variant': 'linear', 'hidden': 256, 'dropout': 0.1, 'lr': 0.0003, 'wd': 0.01, 'bs': 256}
+seed 0: best_epoch 3 params 1,049,088 train 4.5s | val_id 43.4 test_id 43.4 test_ud 43.8 test_2014 37.8 test_2015 35.0 test_2017 34.8
+seed 1: best_epoch 4 params 1,049,088 train 5.1s | val_id 43.7 test_id 47.4 test_ud 43.9 test_2014 38.1 test_2015 35.4 test_2017 35.1
+seed 2: best_epoch 8 params 1,049,088 train 7.3s | val_id 43.7 test_id 45.2 test_ud 42.4 test_2014 37.7 test_2015 36.2 test_2017 35.5
+seed 3: best_epoch 4 params 1,049,088 train 5.2s | val_id 44.6 test_id 46.1 test_ud 44.0 test_2014 36.9 test_2015 35.6 test_2017 34.5
+seed 4: best_epoch 2 params 1,049,088 train 3.9s | val_id 42.5 test_id 43.4 test_ud 44.3 test_2014 37.8 test_2015 35.3 test_2017 34.4
+
+== accuracy (%, mean of 5 seeds; user-cluster 95% CI; chance 25) ==
+set           cosine (training-free)        linear (5 seeds)           MLP (5 seeds)
+val_id            33.0 [31.7,34.5]        43.6 [42.4,44.8]        59.6 [58.3,60.9]
+test_id           34.3 [32.6,35.9]        45.1 [43.8,46.4]        61.9 [60.5,63.4]
+test_ud           32.4 [30.8,34.0]        43.7 [42.2,45.3]        58.8 [56.8,60.8]
+test_2014         29.3 [28.3,30.4]        37.7 [36.9,38.5]        50.1 [49.2,51.1]
+test_2015         28.6 [27.5,29.6]        35.5 [34.7,36.3]        46.2 [45.2,47.2]
+test_2017         28.5 [27.2,29.7]        34.9 [33.7,36.0]        45.1 [43.7,46.5]
+per-seed linear acc range per set: val_id 42.5-44.6; test_id 43.4-47.4; test_ud 42.4-44.3; test_2014 36.9-38.1; test_2015 35.0-36.2; test_2017 34.4-35.5
+
+== DESCRIPTIVE baseline-relative degradation: accuracy change (shifted year - reference), percentage points [independent user-cluster 95% CI] ==
+(descriptive only: not additive, not a causal decomposition, not a measure of task difficulty; the three models differ in capacity and in what they exploit)
+-- reference test_id
+year                        cosine                  linear                     MLP      MLP drop - linear drop
+test_2014         -5.0 [-7.0,-2.9]        -7.5 [-9.0,-6.0]     -11.8 [-13.6,-10.2]        -4.4 [-6.0,-2.8]
+test_2015         -5.7 [-7.6,-3.7]       -9.6 [-11.2,-8.1]     -15.8 [-17.6,-14.0]        -6.2 [-7.8,-4.5]
+test_2017         -5.8 [-7.9,-3.8]      -10.2 [-12.0,-8.5]     -16.9 [-18.8,-14.8]        -6.6 [-8.3,-4.9]
+-- reference test_ud
+year                        cosine                  linear                     MLP      MLP drop - linear drop
+test_2014         -3.1 [-5.1,-1.1]        -6.0 [-7.8,-4.3]       -8.7 [-10.9,-6.5]        -2.6 [-4.2,-1.1]
+test_2015         -3.9 [-5.7,-2.0]       -8.2 [-10.0,-6.4]     -12.6 [-14.9,-10.4]        -4.4 [-6.0,-2.9]
+test_2017         -3.9 [-5.9,-1.9]       -8.8 [-10.9,-6.9]     -13.7 [-16.1,-11.2]        -4.9 [-6.5,-3.2]
+
+parameters: cosine 0 (training-free) | linear 1,049,088 | MLP 1,245,953

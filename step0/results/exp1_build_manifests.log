@@ -1,0 +1,46 @@
+eligible=442,907 exact-duplicate item-sets dropped=133 outfits with repeated item_id dropped=0
+project pools: {2013: 42522, 2014: 98268, 2015: 153566, 2016: 81263, 2017: 38514}
+tr2013 outfits: {'train': 30816, 'val_id': 3851, 'test_id': 3172, 'test_ud': 3851, 'test_2014': 7702, 'test_2015': 7702, 'test_2017': 7702} | TaskB instances: {'val_id': 3851, 'test_id': 3172, 'test_ud': 3851, 'test_2014': 7702, 'test_2015': 7702, 'test_2017': 7702} | dropped: {'val_id': 0, 'test_id': 0, 'test_ud': 0, 'test_2014': 0, 'test_2015': 0, 'test_2017': 0}
+tr2014 outfits: {'train': 30816, 'val_id': 3851, 'test_id': 3851, 'test_ud': 3851, 'test_2015': 7702, 'test_2016': 7702, 'test_2017': 7702} | TaskB instances: {'val_id': 3851, 'test_id': 3851, 'test_ud': 3851, 'test_2015': 7702, 'test_2016': 7702, 'test_2017': 7702} | dropped: {'val_id': 0, 'test_id': 0, 'test_ud': 0, 'test_2015': 0, 'test_2016': 0, 'test_2017': 0}
+official_tr2013 {'train': 30816, 'val_2013': 5857, 'test_2013': 5858, 'val_2014': 3851, 'test_2014': 3851, 'val_2015': 3851, 'test_2015': 3851, 'val_2017': 3851, 'test_2017': 3851}
+{
+ "version": "v1",
+ "project_seed": 20261012,
+ "official_seed": 0,
+ "required_items_by_group": {
+  "S0:test_2013": 24863,
+  "S0:test_2014": 20491,
+  "S0:test_2015": 20890,
+  "S0:test_2017": 21268,
+  "S0:train2013": 82374,
+  "S0:val_2013": 25058,
+  "S0:val_2014": 20395,
+  "S0:val_2015": 20797,
+  "S0:val_2017": 21301,
+  "S1_tr2013:test_2014": 37972,
+  "S1_tr2013:test_2015": 38131,
+  "S1_tr2013:test_2017": 38707,
+  "S1_tr2013:test_id": 14876,
+  "S1_tr2013:test_ud": 16631,
+  "S1_tr2013:train": 83003,
+  "S1_tr2013:val_id": 17639,
+  "S1_tr2014:test_2015": 38131,
+  "S1_tr2014:test_2016": 37254,
+  "S1_tr2014:test_2017": 38707,
+  "S1_tr2014:test_id": 20333,
+  "S1_tr2014:test_ud": 20099,
+  "S1_tr2014:train": 113292,
+  "S1_tr2014:val_id": 20498
+ },
+ "required_items_total": 391422,
+ "required_S1_tr2013": 206366,
+ "required_S0": 207294,
+ "required_S1_tr2014": 246555,
+ "dedupe": {
+  "exact_dup_dropped": 133,
+  "repeated_item_outfits_dropped": 0
+ },
+ "fp16_GB": 3.206529024,
+ "fp32_GB": 6.413058048
+}
+done in 25s

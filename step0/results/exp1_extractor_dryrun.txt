@@ -1,0 +1,18 @@
+{
+ "tar": "ros4l3w7-00135-of-00200.tar.gz",
+ "ok": true,
+ "size_ok": true,
+ "etag_ok": true,
+ "n_in_tar": 11678,
+ "n_kept": 1911,
+ "bad_dim": 0,
+ "nonfinite": 0,
+ "overflow": 0,
+ "dirs": [
+  "ros4l3w7-00135-of-00200"
+ ],
+ "dir_matches_tar_name": true,
+ "seconds": 4.1,
+ "shard_bytes": 15670702,
+ "required_found": 1911
+}

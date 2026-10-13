@@ -1,0 +1,21 @@
+{
+ "cfg": {
+  "variant": "visual",
+  "hidden": 256,
+  "dropout": 0.3,
+  "lr": 0.0003,
+  "wd": 0.01,
+  "bs": 256
+ },
+ "seed": 1,
+ "best_epoch": 18,
+ "epochs_run": 23,
+ "params": 1245953,
+ "train_seconds": 13.7,
+ "sec_per_epoch": 0.6,
+ "val": {
+  "acc": 0.5933523760062321,
+  "nll": 0.9446011781692505
+ },
+ "shuffled_labels": false
+}

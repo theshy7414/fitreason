@@ -1,0 +1,7 @@
+val_id: n=3851 cosine=33.0 decidable=5.7% strata id-seen/twin-only/novel = [np.float64(0.708), np.float64(0.023), np.float64(0.269)]
+test_id: n=3172 cosine=34.3 decidable=6.5% strata id-seen/twin-only/novel = [np.float64(0.719), np.float64(0.021), np.float64(0.26)]
+test_ud: n=3851 cosine=32.4 decidable=5.5% strata id-seen/twin-only/novel = [np.float64(0.728), np.float64(0.018), np.float64(0.254)]
+test_2014: n=7702 cosine=29.3 decidable=0.2% strata id-seen/twin-only/novel = [np.float64(0.127), np.float64(0.024), np.float64(0.849)]
+test_2015: n=7702 cosine=28.6 decidable=0.0% strata id-seen/twin-only/novel = [np.float64(0.013), np.float64(0.007), np.float64(0.98)]
+test_2017: n=7702 cosine=28.5 decidable=0.0% strata id-seen/twin-only/novel = [np.float64(0.004), np.float64(0.001), np.float64(0.996)]
+saved results/exp1_instance_table_taskB.npz

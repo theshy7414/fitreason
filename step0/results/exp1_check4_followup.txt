@@ -1,0 +1,20 @@
+train outfits=30,816 distinct train item pairs=451,118
+
+======== (a) train co-occurrence route (id-level), Task B frozen instances ========
+role           n   pos co-occurs w/ query item   neg co-occurs  decidable%   cooc-count baseline acc   partial-overlap(>=50%) n / pos in that train outfit
+val_id      3851                          6.2%            0.8%        5.7%        28.9 [ 28.4, 29.6]                                               70 / 32
+test_id     3172                          6.8%            0.8%        6.5%        29.4 [ 28.8, 30.2]                                               74 / 42
+test_ud     3851                          6.0%            0.7%        5.5%        28.9 [ 28.2, 29.8]                                               80 / 43
+test_2014   7702                          0.2%            0.0%        0.2%        25.1 [ 25.1, 25.2]                                                 7 / 4
+test_2015   7702                          0.0%            0.0%        0.0%        25.0 [ 25.0, 25.0]                                                 1 / 1
+test_2017   7702                          0.0%            0.0%        0.0%        25.0 [ 25.0, 25.0]                                                 0 / 0
+decidable% = positive co-occurs with a query item in some train outfit and NO negative does (a memorised-pair signal exists).
+
+======== (b) cosine drop under shift: centring with 2013-train mean vs year-matched mean (transductive diagnostic, test-year items' own mean) ========
+role          cos centred on 2013 train mean   cos centred on own-set mean             cos raw
+val_id                    33.0 [ 31.6, 34.3]            33.0 [ 31.7, 34.4]  28.8 [ 27.4, 30.3]
+test_id                   34.3 [ 32.6, 35.9]            34.7 [ 33.1, 36.3]  30.7 [ 29.1, 32.4]
+test_ud                   32.4 [ 30.7, 34.0]            32.2 [ 30.4, 33.7]  30.4 [ 29.0, 31.8]
+test_2014                 29.3 [ 28.3, 30.3]            30.0 [ 28.9, 31.1]  28.1 [ 27.1, 29.0]
+test_2015                 28.6 [ 27.5, 29.6]            29.5 [ 28.5, 30.5]  28.4 [ 27.5, 29.4]
+test_2017                 28.5 [ 27.2, 29.7]            29.3 [ 28.3, 30.4]  28.2 [ 27.1, 29.4]
