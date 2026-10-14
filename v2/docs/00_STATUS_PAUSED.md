@@ -20,7 +20,7 @@
 
 | 內容 | 位置 |
 |---|---|
-| 這個個人專案（研究線 + 這份 V2 文件） | `/home/chi/fitreason/`；GitHub：`theshy7414/fitreason`（private） |
+| 這個個人專案（研究線 + 這份 V2 文件） | `/home/chi/fitreason/`；GitHub：`theshy7414/fitreason`（public） |
 | 研究線大檔（不在 git）與完整備份 | `/home/chi/fitreason/step0/data/`；備份 `/home/chi/backups/outfitmatch-research-20261012/` |
 | v1 課程工作副本（含憑證，**不可推到 GitHub**） | Windows `Documents/NTU-DBMS-2025-Spring/OutfitMatch` |
 

@@ -4,7 +4,7 @@
 
 ## 這份就是唯一的個人專案（2026-10-14）
 
-- 本機目錄：`/home/chi/fitreason`。GitHub：`theshy7414/fitreason`（private）。兩邊是同一份。
+- 本機目錄：`/home/chi/fitreason`。GitHub：`theshy7414/fitreason`（public）。兩邊是同一份。
 - `v2/` 是暫停中的產品計畫，目前只有文件。不要 import `step0/` 的 data、特徵或權重。
 - 不上 GitHub：`step0/data/`、checkpoint、`pylibs/`、v1 帳密。v1 課程程式在公開 repo `NTU-DBMS-2025-Spring` 的 `fbec04a`；Windows 工作副本在 `Documents/NTU-DBMS-2025-Spring/OutfitMatch`。
 - 大檔備份留在 `/home/chi/backups/outfitmatch-research-20261012/`，不是第二個專案。
