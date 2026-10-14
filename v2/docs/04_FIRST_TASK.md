@@ -15,7 +15,7 @@
 ## Step 0 — 專案骨架（15 分鐘）
 
 ```bash
-cd /home/chi/outfitmatch
+cd /home/chi/fitreason
 mkdir -p api/app/stores api/tests db/neo4j/seed db/postgres scripts
 cat > .gitignore <<'EOF'
 .venv/
@@ -27,14 +27,14 @@ node_modules/
 .pytest_cache/
 EOF
 cat > .env.example <<'EOF'
-NEO4J_PASSWORD=outfitmatch_dev_pw
-POSTGRES_PASSWORD=outfitmatch_dev_pw
+NEO4J_PASSWORD=fitreason_dev_pw
+POSTGRES_PASSWORD=fitreason_dev_pw
 EOF
 cp .env.example .env
 uv venv --python 3.12 && source .venv/bin/activate
 cat > pyproject.toml <<'EOF'
 [project]
-name = "outfitmatch-v2"
+name = "fitreason"
 version = "0.0.1"
 requires-python = ">=3.10"
 dependencies = ["fastapi>=0.115", "uvicorn[standard]>=0.30", "neo4j>=5.26", "psycopg[binary]>=3.2", "pydantic-settings>=2.4"]
@@ -65,13 +65,13 @@ services:
   postgres:
     image: pgvector/pgvector:pg16
     environment:
-      POSTGRES_USER: outfit
+      POSTGRES_USER: fitreason
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
-      POSTGRES_DB: outfitmatch
+      POSTGRES_DB: fitreason
     ports: ["5432:5432"]
     volumes: [pg_data:/var/lib/postgresql/data]
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U outfit -d outfitmatch"]
+      test: ["CMD-SHELL", "pg_isready -U fitreason -d fitreason"]
       interval: 5s
       timeout: 5s
       retries: 20
@@ -165,7 +165,7 @@ o4,bag_01
 ## 完成定義（DoD）
 
 ```bash
-cd /home/chi/outfitmatch
+cd /home/chi/fitreason
 make up && make seed && make test          # 全綠
 curl -s localhost:8000/api/v1/health       # {"status":"ok","neo4j":"ok","postgres":"ok"}
 curl -s 'localhost:8000/api/v1/evidence?a=top_01&b=shoes_02'

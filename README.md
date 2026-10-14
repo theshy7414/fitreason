@@ -1,12 +1,14 @@
-# OutfitMatch Research — SHIFT15M temporal reliability
+# FitReason
+
+個人專案，回答「這幾件為什麼搭」。舊名 OutfitMatch 留給課程期末專案（公開 repo、Windows 工作副本、`Eskartur/OutfitMatch`），這裡不再用那個名字。
 
 ## 這份就是唯一的個人專案（2026-10-14）
 
-- 本機目錄：`/home/chi/outfitmatch`。GitHub：`theshy7414/outfitmatch`（private）。兩邊是同一份。
+- 本機目錄：`/home/chi/fitreason`。GitHub：`theshy7414/fitreason`（private）。兩邊是同一份。
 - `v2/` 是暫停中的產品計畫，目前只有文件。不要 import `step0/` 的 data、特徵或權重。
 - 不上 GitHub：`step0/data/`、checkpoint、`pylibs/`、v1 帳密。v1 課程程式在公開 repo `NTU-DBMS-2025-Spring` 的 `fbec04a`；Windows 工作副本在 `Documents/NTU-DBMS-2025-Spring/OutfitMatch`。
 - 大檔備份留在 `/home/chi/backups/outfitmatch-research-20261012/`，不是第二個專案。
-- 更早的文件若寫 `/home/chi/outfitmatch-research/` 或 `~/code/outfitmatch-research/`，指的就是現在這個目錄。
+- 更早的文件若寫 `/home/chi/outfitmatch/`、`/home/chi/outfitmatch-research/` 或 `~/code/outfitmatch-research/`，指的就是現在這個目錄。研究報告正文裡的 OutfitMatch 是結案時的名字，沒有改寫。
 
 ## 狀態（繁體中文）
 
@@ -18,7 +20,7 @@
 
 | 內容 | 本機位置 | 備註 |
 |---|---|---|
-| 特徵、原始資料（約 42 GB） | `/home/chi/outfitmatch/step0/data/` | 已被 `.gitignore` 排除 |
+| 特徵、原始資料（約 42 GB） | `/home/chi/fitreason/step0/data/` | 已被 `.gitignore` 排除 |
 | 第三方 Python 套件 | `step0/pylibs/` | 排除 |
 | 模型 checkpoint（`*.pt`） | `step0/runs/**/best.pt` | 排除 |
 | bootstrap pickle | `step0/runs/exp2/main_bootstrap.pkl`（5.8 MB） | 排除 |
@@ -38,6 +40,6 @@
 ## Status (English)
 
 - **Research line paused/closed on 2026-10-13 as a bounded negative result**: no new reliability method under temporal shift on SHIFT15M was found worth adopting. See [`FINAL_RESEARCH_REPORT.md`](FINAL_RESEARCH_REPORT.md).
-- This repo is **code + docs only**. Large artefacts (features/data ~42 GB, `*.pt` checkpoints, `main_bootstrap.pkl`, `step0/pylibs/`, one 7 MB near-dup flags file) are **not in git**; they live under `/home/chi/outfitmatch/step0/` and in the full backup at `/home/chi/backups/outfitmatch-research-20261012/`.
+- This repo is **code + docs only**. Large artefacts (features/data ~42 GB, `*.pt` checkpoints, `main_bootstrap.pkl`, `step0/pylibs/`, one 7 MB near-dup flags file) are **not in git**; they live under `/home/chi/fitreason/step0/` and in the full backup at `/home/chi/backups/outfitmatch-research-20261012/`.
 - Dataset: SHIFT15M, **CC BY-NC 4.0**, non-commercial only. No raw images are included; manifests contain only anonymised ids.
 - The paused product plan is `v2/` in this same repo. It reuses only the conclusions and architecture, and must not import `step0/` data, features, or weights.

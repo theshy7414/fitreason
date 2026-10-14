@@ -1,6 +1,6 @@
 # 復原紀錄（歷史，不要照這份重建目錄）
 
-2026-10-14 已整理：個人專案只留 `/home/chi/outfitmatch`（GitHub `theshy7414/outfitmatch`）。`/home/chi/code/` 與裡面的 v1 復原副本已刪除，那些都是 GitHub 或 Windows 上已有的複本。v1 帳密留在 Windows `Documents/NTU-DBMS-2025-Spring/OutfitMatch`，沒有上傳。下面是 2026-10-12 的原始紀錄。
+2026-10-14 已整理：個人專案只留 `/home/chi/fitreason`（GitHub `theshy7414/fitreason`）。`/home/chi/code/` 與裡面的 v1 復原副本已刪除，那些都是 GitHub 或 Windows 上已有的複本。v1 帳密留在 Windows `Documents/NTU-DBMS-2025-Spring/OutfitMatch`，沒有上傳。下面是 2026-10-12 的原始紀錄。
 
 # 01 — 復原與備份（Phase 1 findings）
 

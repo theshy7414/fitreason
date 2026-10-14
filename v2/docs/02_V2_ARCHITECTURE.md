@@ -214,7 +214,7 @@ class Scored(TypedDict):
 ## 8. 目錄結構（目標）
 
 ```
-outfitmatch-v2/
+fitreason/
   docker-compose.yml  .env.example  Makefile  pyproject.toml  .gitignore
   api/        app/{main.py, settings.py, deps.py, routers/, stores/{neo4j_store.py,pg_store.py}}  tests/
   ml/         encoder.py scoring.py train.py materialize.py  MODEL_CARD.md

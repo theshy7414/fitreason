@@ -1,8 +1,8 @@
-# OutfitMatch V2
+# FitReason
 
 > DBMS + ML 的穿搭推薦系統（個人工程作品集）。把 NTU DBMS 2025 Spring 期末專案 v1（Neo4j、以 Style 標籤推薦）升級成：**用真正的 clothing compatibility 模型打分數，並且用圖資料庫查詢給出「為什麼搭」的 outfit evidence**。
 
-狀態：**暫停（paused，2026-10-13）**，目前只有文件，尚未實作任何程式。這份計畫放在個人專案 `/home/chi/outfitmatch/v2/`，與研究線同一個 repo，不是另一個專案。恢復時從 `docs/04_FIRST_TASK.md`（M0）開始；詳見 [docs/00_STATUS_PAUSED.md](docs/00_STATUS_PAUSED.md)。
+狀態：**暫停（paused，2026-10-13）**，目前只有文件，尚未實作任何程式。這份計畫放在個人專案 `/home/chi/fitreason/v2/`，與研究線同一個 repo，不是另一個專案。恢復時從 `docs/04_FIRST_TASK.md`（M0）開始；詳見 [docs/00_STATUS_PAUSED.md](docs/00_STATUS_PAUSED.md)。
 
 ## 為什麼要做 V2
 
@@ -48,7 +48,7 @@ flowchart LR
 
 ## 非目標（Non-goals）
 
-- **不**繼續做研究線（SHIFT15M temporal reliability）。研究線已結案、凍結，就在同一個專案的上層（`/home/chi/outfitmatch/`，報告是 `FINAL_RESEARCH_REPORT.md`）。`v2/` 不 import、不複製 `step0/` 的 data / features / 權重。
+- **不**繼續做研究線（SHIFT15M temporal reliability）。研究線已結案、凍結，就在同一個專案的上層（`/home/chi/fitreason/`，報告是 `FINAL_RESEARCH_REPORT.md`）。`v2/` 不 import、不複製 `step0/` 的 data / features / 權重。
 - **不**使用 SHIFT15M（沒有原始圖片，不能 demo）。
 - **不**做使用者帳號系統 / 付款 / 商品爬蟲 / 即時 Instagram 抓取。
 - **不**追求 SOTA accuracy；追求「可重現、授權乾淨、能 demo、能解釋」。

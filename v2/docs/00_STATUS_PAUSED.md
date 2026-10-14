@@ -20,8 +20,8 @@
 
 | 內容 | 位置 |
 |---|---|
-| 這個個人專案（研究線 + 這份 V2 文件） | `/home/chi/outfitmatch/`；GitHub：`theshy7414/outfitmatch`（private） |
-| 研究線大檔（不在 git）與完整備份 | `/home/chi/outfitmatch/step0/data/`；備份 `/home/chi/backups/outfitmatch-research-20261012/` |
+| 這個個人專案（研究線 + 這份 V2 文件） | `/home/chi/fitreason/`；GitHub：`theshy7414/fitreason`（private） |
+| 研究線大檔（不在 git）與完整備份 | `/home/chi/fitreason/step0/data/`；備份 `/home/chi/backups/outfitmatch-research-20261012/` |
 | v1 課程工作副本（含憑證，**不可推到 GitHub**） | Windows `Documents/NTU-DBMS-2025-Spring/OutfitMatch` |
 
 本檔不含任何憑證；`.env` 只在本機建立，且已列入 `.gitignore`。

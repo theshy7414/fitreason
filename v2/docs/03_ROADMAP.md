@@ -18,7 +18,7 @@ M0 → M1 → M2 → M3 → M4；M5 可在 M3 後與 M4 並行。M2 的訓練不
 
 ## 明確邊界（避免研究線無限擴張）
 
-1. **研究線已結案**：`/home/chi/outfitmatch/` 的研究線只讀、不再新增實驗；`v2/` 不 import 它、不複製其 data/features。
+1. **研究線已結案**：`/home/chi/fitreason/` 的研究線只讀、不再新增實驗；`v2/` 不 import 它、不複製其 data/features。
 2. V2 允許的「研究性」工作只有 M2 的**一次**訓練與評估（基線三個 + head 三個 seed）。超參數搜尋上限：**最多 12 組設定、一個下午**；超過就凍結目前最佳。
 3. **不做**：新的 reliability/uncertainty 方法、temporal shift 分析、Task A、ensemble 校準；`ensemble=true` 只能在 M6 後作為選配，且須有明確使用案例。
 4. 任何「再多做一個實驗會更好」的想法 → 寫進 `docs/IDEAS.md`，不當週開工。
